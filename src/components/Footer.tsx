@@ -10,10 +10,10 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/72bfd94a-3561-4a26-8982-d0d5da09e64b.png" 
                 alt="Build The World Logo" 
-                className="h-12 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-110"
+                className="h-12 w-auto transition-transform duration-300 hover:scale-110"
               />
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-gray-300 text-sm leading-relaxed hover-scale">
               Brighter futures, one dream at a time.<br/>
               We focus our efforts to provide shelter,<br/>
               skills, health, and self-reliance to<br/>
@@ -24,13 +24,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <h3 className="text-yellow-400 font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-yellow-400 font-semibold mb-4 hover-scale">Quick Links</h3>
             <ul className="space-y-2 text-gray-300">
               {['Home', 'About Us', 'Projects', 'Get Involved', 'Shop', 'Members'].map((link, index) => (
                 <li key={link}>
                   <a 
                     href="#" 
-                    className="hover:text-white transition-all duration-300 hover:translate-x-2 inline-block"
+                    className="hover:text-white transition-all duration-300 hover:translate-x-2 inline-block hover-scale"
                     style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                   >
                     {link}
@@ -42,8 +42,8 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <h3 className="text-yellow-400 font-semibold mb-4">Whatsapp Us</h3>
-            <p className="text-gray-300 hover:text-white transition-colors duration-300">+977984188457</p>
+            <h3 className="text-yellow-400 font-semibold mb-4 hover-scale">Whatsapp Us</h3>
+            <p className="text-gray-300 hover:text-white transition-colors duration-300 hover-scale pulse-glow">+977984188457</p>
           </div>
         </div>
       </div>
