@@ -24,8 +24,8 @@ const HomePage = () => {
             </div>
             <div className="relative animate-fade-in" style={{ animationDelay: '0.5s' }}>
               <img 
-                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80" 
-                alt="Building homes for community" 
+                src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2742&q=80" 
+                alt="Social work helping community" 
                 className="rounded-lg shadow-xl transition-transform duration-500 hover:scale-105"
               />
               {/* Floating action buttons */}
@@ -100,6 +100,45 @@ const HomePage = () => {
             <span className="text-green-500">a safe haven</span>,{" "}
             <span className="text-green-500">a voice, and a path</span> to reach their full potential.
           </h2>
+        </div>
+      </section>
+
+      {/* Community Buildings & Infrastructure Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 animate-fade-in">
+              <h2 className="text-3xl font-bold text-gray-900 hover-scale">Community Buildings & Infrastructure</h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Building strong foundations for thriving communities. Our infrastructure projects create lasting change through strategic development of essential facilities that serve as pillars of community growth and empowerment.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <p className="text-gray-700">Modern healthcare facilities</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <p className="text-gray-700">Educational centers and libraries</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <p className="text-gray-700">Skill development workshops</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                  <p className="text-gray-700">Safe housing solutions</p>
+                </div>
+              </div>
+            </div>
+            <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <img 
+                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=6000&q=80" 
+                alt="Modern community building infrastructure" 
+                className="rounded-lg shadow-xl transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
