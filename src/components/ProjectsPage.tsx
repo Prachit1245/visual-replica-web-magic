@@ -12,7 +12,7 @@ const ProjectsPage = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left side - Project list */}
           <div className="space-y-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
             {[
@@ -42,6 +42,43 @@ const ProjectsPage = () => {
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-black text-white px-4 py-2 rounded font-bold text-sm hover-scale">
                     BUILD<br/>THE WORLD
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Projects Image Section */}
+        <div className="py-16 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="animate-fade-in">
+                <img 
+                  src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2742&q=80" 
+                  alt="Community projects and social work" 
+                  className="rounded-lg shadow-xl transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <h2 className="text-3xl font-bold text-gray-900">Our Impact Projects</h2>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Each project represents a step towards building stronger, more resilient communities. 
+                  From providing shelter to creating opportunities for skill development and healthcare access, 
+                  our initiatives are designed to create lasting positive change.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <p className="text-gray-700">Direct community impact</p>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <p className="text-gray-700">Sustainable development approach</p>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <p className="text-gray-700">Community-driven solutions</p>
                   </div>
                 </div>
               </div>
