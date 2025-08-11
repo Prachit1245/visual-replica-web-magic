@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ShoppingBag, Menu, X } from 'lucide-react';
+import QRCodeModal from './QRCodeModal';
 
 interface HeaderProps {
   currentPage: string;
@@ -10,6 +11,7 @@ interface HeaderProps {
 
 const Header = ({ currentPage, onNavigate }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showQRModal, setShowQRModal] = useState(false);
 
   const navItems = [
     { name: 'Home', key: 'home' },
@@ -19,6 +21,10 @@ const Header = ({ currentPage, onNavigate }: HeaderProps) => {
     { name: 'Shop', key: 'shop' },
     { name: 'Members', key: 'members' },
   ];
+
+  const handleDonateClick = () => {
+    setShowQRModal(true);
+  };
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50 animate-fade-in">
@@ -55,7 +61,10 @@ const Header = ({ currentPage, onNavigate }: HeaderProps) => {
               <ShoppingBag className="h-5 w-5 text-green-500 transition-transform duration-300 hover:rotate-12" />
               <span className="text-sm font-medium">0</span>
             </div>
-            <Button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Button 
+              onClick={handleDonateClick}
+              className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
               Donate →
             </Button>
             
@@ -92,6 +101,12 @@ const Header = ({ currentPage, onNavigate }: HeaderProps) => {
           </div>
         )}
       </div>
+
+      <QRCodeModal 
+        isOpen={showQRModal}
+        onClose={() => setShowQRModal(false)}
+        title="Make a Donation"
+      />
     </header>
   );
 };

@@ -3,11 +3,13 @@ import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useState } from 'react';
-import { Plus, Upload, Tag, DollarSign } from 'lucide-react';
+import { Plus, Upload, Tag, DollarSign, ShoppingCart } from 'lucide-react';
+import QRCodeModal from './QRCodeModal';
 
 const ShopPage = () => {
   const [priceRange, setPriceRange] = useState([10000, 20000]);
   const [showAddProduct, setShowAddProduct] = useState(false);
+  const [showQRModal, setShowQRModal] = useState(false);
 
   const products = [
     {
@@ -23,6 +25,10 @@ const ShopPage = () => {
       image: 'https://images.unsplash.com/photo-1610736019575-aa4cf6c7bc8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
     }
   ];
+
+  const handleBuyClick = () => {
+    setShowQRModal(true);
+  };
 
   return (
     <div className="min-h-screen bg-white py-16">
@@ -188,7 +194,7 @@ const ShopPage = () => {
               {products.map((product, index) => (
                 <div 
                   key={product.id} 
-                  className="group cursor-pointer hover-scale animate-fade-in"
+                  className="group cursor-pointer hover-scale animate-fade-in border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-all duration-300"
                   style={{ animationDelay: `${0.5 + index * 0.1}s` }}
                 >
                   <div className="aspect-square overflow-hidden rounded-lg mb-4 shadow-lg hover:shadow-xl transition-all duration-300">
@@ -199,13 +205,26 @@ const ShopPage = () => {
                     />
                   </div>
                   <h3 className="font-medium text-gray-900 mb-2 hover:text-green-600 transition-colors">{product.name}</h3>
-                  <p className="text-lg font-semibold text-gray-900">₹{product.price.toLocaleString()}.00</p>
+                  <p className="text-lg font-semibold text-gray-900 mb-4">₹{product.price.toLocaleString()}.00</p>
+                  <Button 
+                    onClick={handleBuyClick}
+                    className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg transition-all duration-300 hover:scale-105"
+                  >
+                    <ShoppingCart className="w-4 h-4 mr-2" />
+                    Buy Now
+                  </Button>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      <QRCodeModal 
+        isOpen={showQRModal}
+        onClose={() => setShowQRModal(false)}
+        title="Complete Your Purchase"
+      />
     </div>
   );
 };

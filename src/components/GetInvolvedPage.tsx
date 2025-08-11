@@ -1,8 +1,15 @@
-
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart, Users, Share2 } from 'lucide-react';
+import QRCodeModal from './QRCodeModal';
 
 const GetInvolvedPage = () => {
+  const [showQRModal, setShowQRModal] = useState(false);
+
+  const handleDonateClick = () => {
+    setShowQRModal(true);
+  };
+
   return (
     <div className="min-h-screen bg-white py-16 animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,7 +67,10 @@ const GetInvolvedPage = () => {
             <p className="text-gray-600 leading-relaxed">
               Your financial support is the cornerstone of our work. Even a small contribution can make a significant difference.
             </p>
-            <Button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Button 
+              onClick={handleDonateClick}
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
               Donate →
             </Button>
           </div>
@@ -110,6 +120,12 @@ const GetInvolvedPage = () => {
           </h2>
         </div>
       </div>
+
+      <QRCodeModal 
+        isOpen={showQRModal}
+        onClose={() => setShowQRModal(false)}
+        title="Make a Donation"
+      />
     </div>
   );
 };

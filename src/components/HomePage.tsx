@@ -1,7 +1,14 @@
-
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import QRCodeModal from './QRCodeModal';
 
 const HomePage = () => {
+  const [showQRModal, setShowQRModal] = useState(false);
+
+  const handleDonateClick = () => {
+    setShowQRModal(true);
+  };
+
   return (
     <div className="space-y-0">
       {/* Hero Section */}
@@ -24,14 +31,17 @@ const HomePage = () => {
             </div>
             <div className="relative animate-fade-in" style={{ animationDelay: '0.5s' }}>
               <img 
-                src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2742&q=80" 
+                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2173&q=80" 
                 alt="Social work helping community" 
                 className="rounded-lg shadow-xl transition-transform duration-500 hover:scale-105"
               />
               {/* Floating action buttons */}
               <div className="absolute top-4 right-4 space-y-2">
                 <div className="bg-white rounded-full p-3 shadow-lg hover-scale animate-fade-in" style={{ animationDelay: '1.2s' }}>
-                  <Button className="bg-green-500 hover:bg-green-600 text-white rounded-full px-4 py-2 transition-all duration-300 hover:scale-105">
+                  <Button 
+                    onClick={handleDonateClick}
+                    className="bg-green-500 hover:bg-green-600 text-white rounded-full px-4 py-2 transition-all duration-300 hover:scale-105"
+                  >
                     Donate
                   </Button>
                 </div>
@@ -184,6 +194,12 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      <QRCodeModal 
+        isOpen={showQRModal}
+        onClose={() => setShowQRModal(false)}
+        title="Make a Donation"
+      />
     </div>
   );
 };
